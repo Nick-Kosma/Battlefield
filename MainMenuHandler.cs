@@ -50,16 +50,6 @@ namespace Battlefield
 
         private void OnCustomGameModeButtonClick(Widget widget)
         {
-            StartCustomBattle();
-        }
-
-        private void StartCustomBattle()
-        {
-            MissionState.OpenNew("CustomBattleScene", new MissionInitializerRecord(null), mission =>
-            {
-                mission.AddMissionBehavior(new CustomBattleMissionBehavior());
-                return null;
-            });
         }
     }
 
