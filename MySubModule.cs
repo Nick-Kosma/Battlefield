@@ -1,32 +1,46 @@
-﻿using TaleWorlds.Core;
-using TaleWorlds.MountAndBlade;
-using TaleWorlds.CampaignSystem;
-using TaleWorlds.CampaignSystem.CampaignBehaviors;
-using TaleWorlds.Engine;
-using TaleWorlds.Engine.GauntletUI;
+﻿using TaleWorlds.CampaignSystem;
+using TaleWorlds.Core;
 using TaleWorlds.Library;
-using TaleWorlds.GauntletUI;
-using TaleWorlds.MountAndBlade.GauntletUI.Widgets;
-using TaleWorlds.GauntletUI.Data;
-using TaleWorlds.GauntletUI.PrefabSystem;
-using TaleWorlds.GauntletUI.BaseTypes;
 using TaleWorlds.Localization;
+using TaleWorlds.MountAndBlade;
 using TaleWorlds.ScreenSystem;
 
 namespace Battlefield
 {
     public class MySubModule : MBSubModuleBase
     {
+        private MainMenuHandler _mainMenuHandler;
+
         protected override void OnSubModuleLoad()
         {
             base.OnSubModuleLoad();
-            // Custom initialization code
+            // Additional initialization code if needed
+
+            // InformationManager.DisplayMessage(new InformationMessage("TE loaded"));
+            Module.CurrentModule.AddInitialStateOption(new InitialStateOption("Message",
+                new TextObject("Message", null),
+                9990,
+                () => { InformationManager.DisplayMessage(new InformationMessage("Hello World!")); },
+                () => { return (false, null); }));
+
+        }
+
+        protected override void OnBeforeInitialModuleScreenSetAsRoot()
+        {
+            base.OnBeforeInitialModuleScreenSetAsRoot();
+            _mainMenuHandler = new MainMenuHandler();
+            _mainMenuHandler.Initialize(Game.Current.GameStateManager.CreateState<InitialState>());
+        }
+
+        protected override void OnApplicationTick(float dt)
+        {
+            base.OnApplicationTick(dt);
+            // Handle any updates per tick if necessary
         }
 
         protected override void OnGameStart(Game game, IGameStarter gameStarterObject)
         {
             base.OnGameStart(game, gameStarterObject);
-
             if (game.GameType is Campaign)
             {
                 AddCustomGameMode(gameStarterObject as CampaignGameStarter);
@@ -35,57 +49,7 @@ namespace Battlefield
 
         private void AddCustomGameMode(CampaignGameStarter gameStarter)
         {
-            // Define your custom behavior here
             gameStarter.AddBehavior(new CustomBattleGameModeBehavior());
-        }
-
-        protected override void OnBeforeInitialModuleScreenSetAsRoot()
-        {
-            base.OnBeforeInitialModuleScreenSetAsRoot();
-            // Add the custom button to the main menu
-            AddMainMenuButton();
-        }
-
-        private void AddMainMenuButton()
-        {
-            // Corrected the way to get the main menu screen
-            var mainMenuScreen = UIResourceManager.UIResourceDepot.GetData<ScreenBase>("MainMenuScreen");
-            if (mainMenuScreen != null)
-            {
-                var mainMenuLayer = mainMenuScreen.GetLayer(0);
-                if (mainMenuLayer != null)
-                {
-                    // Corrected the way to create a new button widget
-                    var buttonWidget = new ButtonWidget(UIResourceManager.ResourceContext);
-                    buttonWidget.TextWidget = new TextWidget(UIResourceManager.ResourceContext)
-                    {
-                        Brush = UIResourceManager.BrushFactory.GetBrush("DefaultButtonBrush"),
-                        Text = new TextObject("Custom Game Mode").ToString()
-                    };
-                    buttonWidget.Click += OnCustomGameModeButtonClick;
-
-                    var layout = mainMenuLayer.FindChild("MainMenuLayout") as Widget;
-                    if (layout != null)
-                    {
-                        layout.AddChild(buttonWidget);
-                    }
-                }
-            }
-        }
-
-        private void OnCustomGameModeButtonClick(Widget widget)
-        {
-            // Code to execute when the button is clicked
-            StartCustomBattle();
-        }
-
-        private void StartCustomBattle()
-        {
-            MissionState.OpenNew("CustomBattleScene", new MissionInitializerRecord(null), mission =>
-            {
-                mission.AddMissionBehavior(new CustomBattleMissionBehavior());
-                return null;  // Ensure the lambda returns null
-            });
         }
 
         public override void OnGameInitializationFinished(Game game)
@@ -127,4 +91,5 @@ namespace Battlefield
             // Custom behavior logic here
         }
     }
+
 }

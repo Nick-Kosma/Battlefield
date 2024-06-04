@@ -20,7 +20,7 @@
     <OutputPath>..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Battlefield\bin\Win64_Shipping_Client\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,6 +37,9 @@
     </Reference>
     <Reference Include="Battleground_Server">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\Battleground_Server\Battleground_Server - Copy\bin\Win64_Shipping_Server\Battleground_Server.dll</HintPath>
+    </Reference>
+    <Reference Include="DeveloperConsole">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\DeveloperConsole\bin\Win64_Shipping_Client\DeveloperConsole.dll</HintPath>
     </Reference>
     <Reference Include="SandBox">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Mount &amp; Blade II Bannerlord\Modules\SandBox\bin\Win64_Shipping_Client\SandBox.dll</HintPath>
@@ -234,7 +237,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyCustomGameModeHandler.cs" />
+    <Compile Include="CustomGameMode.cs" />
+    <Compile Include="MainMenuHandler.cs" />
     <Compile Include="MySubModule.cs" />
     <Compile Include="FlagCaptureBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
