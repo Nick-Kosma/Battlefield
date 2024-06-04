@@ -1,10 +1,10 @@
-# Bannerlord Multiplayer Mod: Conquest Mode
+# Bannerlord Multiplayer Mod: Battlefield Mode
 
-Welcome to the Bannerlord Multiplayer Mod, featuring an exciting Conquest mode based on popular location point capture game modes. In this mod, you take control of a squad of units, strategically maneuvering them across the battlefield to capture and hold key points against opposing teams. Command your troops, capture flags, and dominate the battlefield in this thrilling multiplayer experience.
+Welcome to the Bannerlord Multiplayer Mod, featuring an exhilarating Battlefield mode based on popular location point capture game modes. In this mod, you take command of a squad of units, strategically maneuvering them across the battlefield to capture and secure key points against opposing teams. Lead your troops, seize control of flags, and dominate the battlefield in this gripping multiplayer experience.
 
 ## Features
 
-- **Conquest Mode**: Engage in intense battles where teams compete to capture and control strategic points on the map.
+- **Battlefield Mode**: Engage in intense battles where teams compete to capture and control strategic points on the map.
 - **Squad Command**: Take charge as the captain of a squad of units and lead them to victory with strategic maneuvers and decisive actions.
 - **Flag Capture Mechanism**: Capture flag points strategically positioned across the battlefield to gain tactical advantages and dominate your opponents. Each map features three flag points, with each team initially controlling their closest flag, while the middle flag remains neutral.
 - **Respawn System**: Experience dynamic respawn mechanics that revolve around captured flags, adding depth and strategy to the gameplay.
@@ -14,8 +14,8 @@ Welcome to the Bannerlord Multiplayer Mod, featuring an exciting Conquest mode b
 
 The Bannerlord Multiplayer Mod is the brainchild of two brothers who share a passion for gaming and modding. With a combined expertise in game development and a deep love for the Mount & Blade series, they are dedicated to delivering an immersive multiplayer experience that pushes the boundaries of modding possibilities.
 
-- **[Brother 1](https://github.com/Nick-Kosma)**: Lead developer and mastermind behind the mod's innovative features and gameplay mechanics.
-- **[Brother 2](https://github.com/ZAKosma)**: Co-developer and advisor, contributing to development, UI, and some design.
+- **[Brother 1 - Nicholas Kosma](https://github.com/Nick-Kosma)**: Lead developer and mastermind behind the mod's innovative features and gameplay mechanics.
+- **[Brother 2 - Zachary Kosma](https://github.com/ZAKosma)**: Co-developer and advisor, contributing to development, UI, and some design.
 
 ## Join the Community - **COMING SOON**
 
