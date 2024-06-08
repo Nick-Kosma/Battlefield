@@ -240,10 +240,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomGameMode.cs" />
-    <Compile Include="MainMenuHandler.cs" />
+    <Compile Include="BattlefieldArmyCompisitionGroupVM.cs" />
+    <Compile Include="BattlefieldARmyCompisitionItemVM.cs" />
+    <Compile Include="BattlefieldBannerlordConfig.cs" />
+    <Compile Include="BattlefieldCustomBattleTroopTypeVM.cs" />
+    <Compile Include="BattlefieldCustomGame.cs" />
+    <Compile Include="BattlefieldGameManager.cs" />
     <Compile Include="BattlefieldSubModule.cs" />
-    <Compile Include="FlagCaptureBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
