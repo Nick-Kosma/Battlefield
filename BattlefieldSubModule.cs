@@ -6,20 +6,19 @@ using TaleWorlds.MountAndBlade.CustomBattle;
 
 namespace Battlefield
 {
-    // Token: 0x0200000D RID: 13
     public class BattlefieldSubModule : CustomBattleSubModule
     {
-        // Token: 0x060000B5 RID: 181 RVA: 0x000074C4 File Offset: 0x000056C4
         protected override void OnSubModuleLoad()
         {
-            Module.CurrentModule.AddInitialStateOption(new InitialStateOption("Battlefield", new TextObject("{=4gOGGbeQ}Battlefield", null), 5000, delegate ()
+            Module.CurrentModule.AddInitialStateOption(new InitialStateOption("Battlefield", new TextObject("{=4gOGGbeQ}Battlefield"), 5000, () =>
             {
                 MBGameManager.StartNewGame(new BattlefieldGameManager());
             }, () => new ValueTuple<bool, TextObject>(false, null), null));
+
+            // Apply Harmony patches
+            HarmonyPatcher.ApplyPatches();
         }
 
         public CustomGameManager GameManager { get; set; }
     }
-
-    
 }

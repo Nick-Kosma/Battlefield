@@ -246,6 +246,7 @@
     <Compile Include="BattlefieldCustomBattleTroopTypeVM.cs" />
     <Compile Include="BattlefieldCustomGame.cs" />
     <Compile Include="BattlefieldGameManager.cs" />
+    <Compile Include="MissionTickPatch.cs" />
     <Compile Include="BattlefieldSubModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

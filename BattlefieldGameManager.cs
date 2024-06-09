@@ -2,6 +2,7 @@
 using TaleWorlds.MountAndBlade.CustomBattle;
 using TaleWorlds.MountAndBlade.Multiplayer;
 using TaleWorlds.MountAndBlade;
+using HarmonyLib;
 
 namespace Battlefield
 {
